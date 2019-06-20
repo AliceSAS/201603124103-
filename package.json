@@ -1,0 +1,44 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -w dist dist/server.js",
+    "compile": "webpack",
+    "watch": "webpack-dev-server --hot --inline",
+    "compile-server": "babel server --presets env --out-dir dist --source-maps",
+    "watch-server": "babel server --presets env --out-dir dist --source-maps --watch",
+    "start-hook": "nodemon -w server server/start_hook.js",
+    "dev-all": "npm run watch & npm run watch-server & npm start",
+    "dev-all-hook": "npm run watch & npm run start-hook",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.2",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "co": "^4.6.0",
+    "express": "^4.16.4",
+    "mongodb": "^2.2.6",
+    "source-map-support": "^0.5.11"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.18.10",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "react-router": "^2.7.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.15.0",
+    "webpack-hot-middleware": "^2.12.2",
+    "whatwg-fetch": "^3.0.0"
+  }
+}
